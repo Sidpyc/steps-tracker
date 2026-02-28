@@ -1,7 +1,10 @@
 #LLM & AI Agent Frameworks
-openai
 llama-index
 langchain
+ollama
+langchain_ollama
+langchain-community
+langchain-core
 
 #Backend(API)
 fastapi
