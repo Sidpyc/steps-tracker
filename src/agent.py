@@ -20,6 +20,7 @@ llm = get_llm()
 class StepsTrackerAgent:
     def __init__(self):
         self.steps_history=[]
+        self.weight_history=[]
 
     def analyzer(self, no_of_steps, weight):
         prompt = f"""
@@ -27,14 +28,14 @@ class StepsTrackerAgent:
     You will guide the user in their fitness journey.
     The user has taken {no_of_steps} steps and is currently of the weight
     {weight} kgs. Provide a status and suggest on how much more or less they should walk
+
     """
         response = llm.invoke([HumanMessage(content=prompt)])
         return response.content
 
-
-agent = StepsTrackerAgent()
-no_of_steps = 10000
-weight = 60
-answer = agent.analyzer(no_of_steps, weight)
-print(f"Your Analysis:", {answer})
-    
+if __name__ == "__main__":
+    agent = StepsTrackerAgent()
+    no_of_steps = 10000
+    weight = 60
+    answer = agent.analyzer(no_of_steps, weight)
+    print(f"Your Analysis:", {answer})
