@@ -24,3 +24,27 @@ def create_table():
 
     print("Table Created", DB_NAME)
 
+
+def log_steps(user_id,steps_taken,weight):
+    conn = sqlite3.connect(DB_NAME)
+    cursor= conn.cursor()
+    date_today = datetime.today().strftime('%Y-%m-%d')
+    cursor.execute("INSERT INTO steps_tracker  (user_id,step_taken,weight, date) VALUES (?,?,?,?)", (user_id,steps_taken,weight, date_today))
+    conn.commit()
+    conn.close()
+
+
+def get_steps_history(user_id):
+    conn = sqlite3.connect(DB_NAME)
+    cursor= conn.cursor()
+    cursor.execute("SELECT step_taken,weight date FROM steps_tracker WHERE user_id = ? ", (user_id,))
+    records = cursor.fetchall()
+    conn.commit()
+    conn.close()
+
+    return records
+
+
+   
+
+create_table()
