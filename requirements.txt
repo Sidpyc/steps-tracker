@@ -1,0 +1,21 @@
+#LLM & AI Agent Frameworks
+openai
+llama-index
+langchain
+
+#Backend(API)
+fastapi
+uvicorn
+
+#Database
+sqlalchemy
+
+#Streamlit
+streamlit
+
+#dotenv
+python-dotenv
+
+#pandas
+pandas
+numpy
