@@ -13,7 +13,7 @@ class StepsTracker(BaseModel):
     steps_taken : int
     weight : float
 
-
+# to post user current status 
 @app.post("/log-steps")
 async def log_steps_taken(request:StepsTracker):
     log_steps(request.user_id,request.steps_taken,request.weight)
@@ -21,6 +21,7 @@ async def log_steps_taken(request:StepsTracker):
     return {"message": "Steps and weight have been logged successfully"}
 
 
+# getting single user history 
 @app.get("/get-step-history/{user_id}")
 async def get_history(user_id:str):
     history = get_steps_history(user_id)

@@ -1,13 +1,22 @@
 1) Create a Project for steps tracking [x]
 2) Create a agent that will take both weight and steps to pass into the llm [x]
-3) Create a Database to store the history of weight and progression 
+3) Create a Database to store the history of weight and progression [x]
 4) Create basic CRUD API for the data
-    - GET(user_id)
+    - GET(user_id)[x]
     - POST
     - PUT(user_id)
     - DELETE(user_id)
 
-5) Create specific dedicated API for query based fetching
+5) Create specific dedicated API for query based fetching [x]
     -
 6) Create a NextJs Frontend app 
 7) Setup Basic cors for allowing CRUD ops 
+
+
+
+
+
+# Need to Focus 
+
+- Need to work on the Networking part . Adding more api end points 
+- Adding deleting user and updating user 
