@@ -1,10 +1,10 @@
 import httpx
 from dotenv import load_dotenv
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.tools import tool
 from langchain_ollama import ChatOllama
 from langchain_core.messages import HumanMessage
-from langchain.agents import create_tool_calling_agent, AgentExecutor
+from langchain_classic.agents import create_tool_calling_agent, AgentExecutor
 
 
 load_dotenv()
@@ -25,6 +25,7 @@ Analyze honestly. Suggest realistic next actions."""
 Context = ChatPromptTemplate.from_messages([
     ("system", LLM_PROMPT),
     ("placeholder", "{messages}"),
+    MessagesPlaceholder(variable_name="agent_scratchpad")
 ])
 
 class StepsTrackerAgent:
