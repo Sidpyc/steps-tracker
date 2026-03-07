@@ -22,5 +22,6 @@ def create_table():
     conn.commit()
     conn.close()
 
-    print("Table Created", DB_NAME)
+create_table()
+
 
