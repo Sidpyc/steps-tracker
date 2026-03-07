@@ -5,7 +5,6 @@ ollama
 langchain_ollama
 langchain-community
 langchain-core
-
 #Backend(API)
 fastapi
 uvicorn
