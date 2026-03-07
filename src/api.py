@@ -17,8 +17,8 @@ class StepsTracker(BaseModel):
 @app.post("/log-steps")
 async def log_steps_taken(request:StepsTracker):
     log_steps(request.user_id,request.steps_taken,request.weight)
-    analysis = agent.analyze_steps(request.steps_taken,request.weight)
-    return {"message": "Steps and weight have been logged successfully", "analysis": analysis}
+    #analysis = agent.analyze_steps(request.steps_taken,request.weight)
+    return {"message": "Steps and weight have been logged successfully"}
 
 
 @app.get("/get-step-history/{user_id}")
